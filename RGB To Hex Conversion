@@ -7,13 +7,16 @@
 function rgb(r, g, b) {
     let arr = [r,g,b]
     let result= '';
+    function check(x){
+        return x.length>1 ? x : 0+x;
+    }
     arr.forEach(e => {
         let x = e<0 ? 0 : e;
         if(x === 0 || e>255){ 
-            result += x === 0 ? '00': (255).toString(16);
+            result += check(x === 0 ? '00': (255).toString(16));
         } else {
-            result += x.toString(16)
+            result += check(x.toString(16))
         }
-    })
-    return result.toUpperCase();
+    }) 
+  return result.toUpperCase();
 }
