@@ -1,0 +1,14 @@
+//Problem : 
+//Let's help them with our own Hashtag Generator!
+//Here's the deal:
+//1.) It must start with a hashtag (#).
+//2.) All words must have their first letter capitalized.
+//3.) If the final result is longer than 140 chars it must return false.
+//4.) If the input or the result is an empty string it must return false.
+
+//My  solution :
+function generateHashtag (str) {
+    let result =  str.toLowerCase().split(' ').map(e => 
+        (e !== '') ? e.split('').map((el,i) => i===0 ? el.toUpperCase() : el).join('') : '').join('');
+    return (result.length < 140 && result.length !==0) ? `#${result}`: false;
+}
