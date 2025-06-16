@@ -1,2 +1,2 @@
 # Codewars-practice
-This repo contains my solutions for LeetCode problems in JavaScript.
+This repo contains my solutions for Codewars problems in JavaScript.
