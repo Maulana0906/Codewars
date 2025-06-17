@@ -15,12 +15,14 @@ cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flo
 //My solution :
 function cakes(recipe, available) {
     let properti = Object.keys(recipe);
-    let result = 0;
+    let result =[];
     properti.forEach(e => {
-        if(available[e] === undefined){result =0;}
-        else{let cache = Math.floor(available[e]/recipe[e]);
-             result = (result!==0 && result<cache) ? result : cache}
+        if(available[e] === undefined){
+            result.push(0)
+        }
+        else{
+            result.push(Math.floor(available[e]/recipe[e]));
+        }
     })
-    return result;
-    
+    return result.sort()[0];   
 }
