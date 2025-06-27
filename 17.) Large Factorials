@@ -23,7 +23,7 @@ function factorial(n){
             carry = Math.floor(product/10);
         }
         while(carry>0){
-            res.push(carry);
+            res.push(carry%10);
             carry = Math.floor(carry/10)
         }
     }
