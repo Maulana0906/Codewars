@@ -28,12 +28,12 @@
     let [result,count] = [[],0];
     str.split('').forEach((e,i) => {
       if(arrAbc.includes(e)){
-        let s = arrKey[i%8];
+        let s = arrKey[i%arrKey.length];
         arrAbc.forEach((el,x)=> {
           if(el==e){count+=x}
           if(el==s){count+=x}
         })
-        result.push(arrAbc[count%26]);
+        result.push(arrAbc[count%arrAbc.length]);
       }else{
         result.push(e);
       }
@@ -45,8 +45,8 @@
     let count = 0; 
     let result = [];  
     str.split('').forEach((e,i)=> {
-      if(!arrAbc.includes(e)){
-        let s = arrKey[i%8];
+      if(arrAbc.includes(e)){
+        let s = arrKey[i%arrKey.length];
         arrAbc.forEach((el,x)=> {
           if(el==e){count+=x}
           if(el==s){count-=x}
